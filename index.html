@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animated Gradient Background */
+    .animated-bg {
+      background: linear-gradient(45deg, #0f0c29, #302b63, #0f0c29, #24243e, #302b63, #0f0c29);
+      background-size: 400% 400%;
+      animation: gradientShift 18s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Subtle floating animation for the card */
+    .float-card {
+      animation: float 12s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-12px); }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen animated-bg flex items-center justify-center text-white">
+
+  <div class="w-full max-w-md px-6">
+    <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-10 float-card">
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        Weather Forecast
+      </h1>
+
+      <form id="inputCity" class="space-y-6">
+        <input 
+          type="text" 
+          placeholder="Enter city name..." 
+          class="w-full px-6 py-4 bg-white/10 border border-white/30 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-4 focus:ring-purple-500/60 focus:border-purple-400 transition-all duration-300 text-lg"
+          required
+        />
+
+        <button 
+		  id="submit"
+          type="submit"
+          class="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-xl font-bold text-lg shadow-xl transform transition hover:scale-105 duration-200"
+        >
+          Get Weather
+        </button>
+      </form>
+
+      <div class="hidden mt-10 space-y-6" id="weatherResult">
+      </div>
+
+	  <div class="hidden display-error text-center">
+		<h2 class="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mt-10">City Not Found</h2>
+	</div>
+    </div>
+  </div>
+   <script src="./script.js"></script>
+</body>
+</html>
