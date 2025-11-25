@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		title.className = "text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg";
 
 		const temperature = document.createElement('h3');
-		temperature.innerHTML = `${Math.round(main.temp)}<span class="text-5xl font-light">°C</span>`;
+		const celsius = Math.round(main.temp - 273.15);
+		temperature.innerHTML = `${celsius}<span class="text-5xl font-light">°C</span>`;
 		temperature.className = "text-8xl font-extralight text-white my-4 tracking-tighter";
 
 		const humidity = document.createElement('p');
