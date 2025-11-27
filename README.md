@@ -1,5 +1,3 @@
-Here's the README without the code examples:
-
 # 🌤️ WEATHER-FORECAST-APP
 
 A beautiful, modern weather application that provides real-time weather information for cities worldwide using the OpenWeatherMap API. Built with vanilla JavaScript featuring an animated glassmorphism UI and seamless user experience.
